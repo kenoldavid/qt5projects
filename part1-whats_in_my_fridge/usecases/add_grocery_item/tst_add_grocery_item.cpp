@@ -30,8 +30,11 @@ void Usecases_add_grocery_item::item_can_be_added()
 {
     // Given I am given a list of available groceries
     //    QFAIL("Not implemented");
-    auto groceryItems = new entities::GroceryItems(this);
-    QVERIFY(groceryItems);
+    auto checkAvailableGroceries = new usecases::CheckAvailableGroceries(m_groceryItems, this);
+    QSignalSpy checkAvailableGroceriesSuccess(checkAvailableGroceries, &usecases::CheckAvailableGroceries::success);
+    checkAvailableGroceries->run();
+    QTRY_COMPARE_WITH_TIMEOUT(checkAvailableGroceriesSuccess.count(), 1, 1000);
+    delete checkAvailableGroceries;
 
     // When I add a grocery item with name X
     QFAIL("Not implemented");
