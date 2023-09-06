@@ -1,4 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    check_available_groceries
+    add_grocery_item \
+#    check_available_groceries

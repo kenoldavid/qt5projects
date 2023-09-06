@@ -49,13 +49,22 @@ void Usecases_check_available_groceries::one_or_more_grocery_items_available()
     groceryItems->setRepository(groceryItemsRepoDummy);
     QVERIFY(groceryItemsRepoDummy->count() > 0);
 
-
     // When I check available groceries
-    QFAIL("Not implemented");
+    // QFAIL("Not implemented");
+    auto checkAvailableGroceries = new usecases::CheckAvailableGroceries(groceryItems, this);
+    QSignalSpy checkAvailableGroceriesSuccess(
+                checkAvailableGroceries,
+                &usecases::CheckAvailableGroceries::success);
+    checkAvailableGroceries->run();
+    QTRY_COMPARE_WITH_TIMEOUT(checkAvailableGroceriesSuccess.count(), 1, 1000);
+
     // Then I am given the list of available grocery items
-    QFAIL("Not implemented");
-    // And the grocery items are ordered by name, ascending
-    QFAIL("Not implemented");
+    // QFAIL("Not implemented");
+    QCOMPARE(groceryItems->list().count(), groceryItemsDummy->count());
+
+    // And (then) the grocery items are ordered by name, ascending
+    // QFAIL("Not implemented");
+    QVERIFY(groceryItems->isSortedBy("name", "ASC"));
 }
 
 QTEST_MAIN(Usecases_check_available_groceries);  // provides a default main function to call in order to run the test
