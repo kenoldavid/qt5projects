@@ -1,50 +1,30 @@
 import QtQuick 2.12
+import QtQml 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 
 ApplicationWindow {
+    id: mainWindow
     visible: true
     width: 360
-    height: 480
-    title: "What's in my fridge?"
-    font.capitalization: "Capitalize"
+    height: 800
+//    title: "What's in my fridge?"
+//    font.capitalization: "Capitalize"
 
     /***
-     * Header
-     ****** */
-    header: ToolBar {
-        RowLayout {
-            id: layoutAppHeader
-            anchors.fill: parent
-            spacing: 6
-            Rectangle {
-                color: '#d8bfd8'
-                Layout.fillWidth: true
-                Layout.minimumWidth: parent.width
-                Layout.minimumHeight: 64
-
-                Text {
-                    id: appTitleText
-                    anchors.centerIn: parent
-                    font.pixelSize: 16
-                    font.bold: true
-                    font.capitalization: "Capitalize"
-                    text: qsTr("your available groceries")
-                }
-            }
-        }
-    }
-
-    /***
-     * Content
-     ****** */
-    Page1 {
+     * Content - Using StackView
+     *************************************** */
+    StackView {
+        id: contentFrame
         anchors.fill: parent
+        initialItem: "loadPage.qml"
+//        initialItem: Qt.resolvedUrl("qrc:/loadPage.qml")
     }
 
-    /***
-     * Footer
-     ****** */
+    Component.onCompleted: {
+        contentFrame.replace("qrc:/nextPage.qml")
+    }
+
 }
 
 
