@@ -6,4 +6,7 @@
         <file>loadPage.qml</file>
         <file>nextPage.qml</file>
     </qresource>
+    <qresource prefix="/img">
+        <file>logo.png</file>
+    </qresource>
 </RCC>
