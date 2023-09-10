@@ -1,9 +1,13 @@
 import QtQuick 2.12
-import QtQuick.Controls 2.12
+import QtQml 2.12 // Required for model, ListModel, ListElement
+import QtQuick.Controls 2.12 // Required for ItemDelegate, Button, TextField
 
 Item {
     id: item1
 
+    /*
+     * Using ListView
+     * */
     ListView {
         id: groceriesListView
 
@@ -55,7 +59,7 @@ Item {
                     anchors.left: parent.left
                     anchors.leftMargin: 16
                     anchors.verticalCenter: parent.verticalCenter
-                    placeholderText: "enter item name"
+                    placeholderText: qsTr("enter item name")
                 }
                 Button {
                     id: addItemBtn
@@ -66,5 +70,6 @@ Item {
                 }
             }
         } // end Row
+
     } // end ListView
 } // end Item
