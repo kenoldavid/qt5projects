@@ -4,6 +4,8 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QCoreApplication::setApplicationName("splashwindow demo");
+    QCoreApplication::setApplicationVersion("v1.0.0");
 
     QGuiApplication app(argc, argv);
 
