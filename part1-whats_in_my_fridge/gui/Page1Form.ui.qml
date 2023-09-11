@@ -12,6 +12,7 @@ Item {
         id: groceriesListView
 
         anchors.fill: parent
+        anchors.margins: 5
 
         model: ListModel {
             ListElement {
