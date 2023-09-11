@@ -51,8 +51,12 @@ Page {
     Rectangle {
         id: pageContent
         anchors.fill: parent
-        anchors.topMargin: 15
-        anchors.bottomMargin: 15
+//        anchors.topMargin: 15
+//        anchors.rightMargin: 15
+        anchors.bottomMargin: 30
+//        anchors.leftMargin: 15
+        anchors.margins: 5
+//        border.color: "black"
 
         Loader {
             anchors.fill: parent
