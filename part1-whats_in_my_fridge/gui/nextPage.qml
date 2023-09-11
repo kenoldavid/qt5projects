@@ -1,6 +1,7 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Layouts 1.12
+import QtQuick 2.15
+import QtQml 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
 
 Page {
     /***
@@ -46,4 +47,17 @@ Page {
             text: qsTr("Activity" + "\n" + height)
         }
     } // End footer
-}
+
+    Rectangle {
+        id: pageContent
+        anchors.fill: parent
+        anchors.topMargin: 15
+        anchors.bottomMargin: 15
+
+        Loader {
+            anchors.fill: parent
+            source: "qrc:/Page1.qml"
+        }
+    }
+
+} // End Page
