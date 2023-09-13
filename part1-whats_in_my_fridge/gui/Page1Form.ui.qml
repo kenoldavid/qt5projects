@@ -10,7 +10,6 @@ Item {
      * */
     ListView {
         id: groceriesListView
-
         anchors.fill: parent
         anchors.margins: 5
 
@@ -31,8 +30,12 @@ Item {
 
         delegate: ItemDelegate {
             width: parent.width
-            text: modelData.name || model.name
-            font.bold: true
+            text: modelData.name || index + " - " + model.name
+            highlighted: ListView.isCurrentItem
+            onClicked: groceriesListView.currentIndex = index
+//            onClicked: console.log("highlighted: ", modelData)
+            font.bold: (ListView.isCurrentItem) ? true : false
+
             Button {
                 width: height
                 height: parent.height
