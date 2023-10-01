@@ -40,7 +40,10 @@ Item {
                 },
                 State {
                     name: "rotated"
-                    PropertyChanges { target: logoImage; rotation: 180; }
+                    PropertyChanges {
+                        target: logoImage;
+                        rotation: 180;
+                    }
                 }
             ]
 
@@ -61,7 +64,10 @@ Item {
 //                onClicked: logoImage.state = "rotated"
 //            }
 
-            onStatusChanged: if(logoImage.status == Image.Ready)
+//            onStatusChanged: if(logoImage.status == Image.Ready)
+//                                 logoImage.state = "rotated"
+
+            onStatusChanged: if("loaded")
                                  logoImage.state = "rotated"
         }
 
