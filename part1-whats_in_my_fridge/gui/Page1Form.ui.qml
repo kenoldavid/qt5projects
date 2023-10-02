@@ -43,37 +43,36 @@ Item {
                 anchors.right: parent.right
             }
         } // end delegate
-
-        Row {
-            id: addItemRow
-            height: 64
-            //spacing: 16
-            anchors.right: parent.right
-            anchors.left: parent.left
-            anchors.bottom: parent.bottom
-
-            Rectangle {
-                height: parent.height
-                width: parent.width
-                anchors.fill: parent
-                color: "grey"
-
-                TextField {
-                    id: addItemField
-                    anchors.left: parent.left
-                    anchors.leftMargin: 16
-                    anchors.verticalCenter: parent.verticalCenter
-                    placeholderText: qsTr("enter item name")
-                }
-                Button {
-                    id: addItemBtn
-                    anchors.right: parent.right
-                    anchors.rightMargin: 16
-                    anchors.verticalCenter: parent.verticalCenter
-                    text: qsTr("Add Item")
-                }
-            }
-        } // end Row
-
     } // end ListView
+
+    Row {
+        id: addItemRow
+        height: 64
+        //spacing: 16
+        anchors.right: parent.right
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+
+        Rectangle {
+            height: parent.height
+            width: parent.width
+            anchors.fill: parent
+            color: "grey"
+
+            TextField {
+                id: addItemField
+                anchors.left: parent.left
+                anchors.leftMargin: 16
+                anchors.verticalCenter: parent.verticalCenter
+                placeholderText: qsTr("Enter item name")
+            }
+            Button {
+                id: addItemBtn
+                anchors.right: parent.right
+                anchors.rightMargin: 16
+                anchors.verticalCenter: parent.verticalCenter
+                text: qsTr("Add Item")
+            }
+        }
+    } // end Row
 } // end Item
