@@ -5,6 +5,7 @@
         <file>Page1Form.ui.qml</file>
         <file>loadPage.qml</file>
         <file>nextPage.qml</file>
+        <file>GridOne.qml</file>
     </qresource>
     <qresource prefix="/img">
         <file>logo.png</file>
