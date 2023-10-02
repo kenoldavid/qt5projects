@@ -73,9 +73,9 @@ Page {
             bottom: layoutAppFooter.top
             left: parent.left
             margins: 5
-            bottomMargin: 30
+            bottomMargin: 10
         }
-        source: "qrc:/Page1.qml"
+        source: "qrc:/GridOne.qml"
     }
 
 } // End Page
