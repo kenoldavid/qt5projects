@@ -48,20 +48,34 @@ Page {
         }
     } // End footer
 
-    Rectangle {
-        id: pageContent
-        anchors.fill: parent
-//        anchors.topMargin: 15
-//        anchors.rightMargin: 15
-        anchors.bottomMargin: 30
-//        anchors.leftMargin: 15
-        anchors.margins: 5
-//        border.color: "black"
+//    Rectangle {
+//        id: pageContent
+//        anchors.fill: parent
+////        anchors.topMargin: 15
+////        anchors.rightMargin: 15
+//        anchors.bottomMargin: 30
+////        anchors.leftMargin: 15
+//        anchors.margins: 5
+////        border.color: "black"
 
-        Loader {
-            anchors.fill: parent
-            source: "qrc:/Page1.qml"
+//        Loader {
+//            anchors.fill: parent
+//            source: "qrc:/Page1.qml"
+//        }
+//    }
+
+    Loader {
+        id: mainLoader
+        anchors {
+            fill: parent
+            top: layoutAppHeader.bottom
+            right: parent.right
+            bottom: layoutAppFooter.top
+            left: parent.left
+            margins: 5
+            bottomMargin: 30
         }
+        source: "qrc:/Page1.qml"
     }
 
 } // End Page
